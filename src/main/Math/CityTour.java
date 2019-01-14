@@ -86,9 +86,9 @@ public class CityTour {
     }
 
     public static void main(String[] args) {
-        //System.out.println(solve(5, new ArrayList<>(Arrays.asList(2, 5))));
-        //System.out.println(solve(3, new ArrayList<>(Arrays.asList(1))));
-        //System.out.println(solve(4, new ArrayList<>(Arrays.asList(3, 1))));
+        System.out.println(solve(5, new ArrayList<>(Arrays.asList(2, 5))));
+        System.out.println(solve(3, new ArrayList<>(Arrays.asList(1))));
+        System.out.println(solve(4, new ArrayList<>(Arrays.asList(3, 1))));
         System.out.println(solve(10, new ArrayList<>(Arrays.asList(6))));
     }
 }
