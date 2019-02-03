@@ -25,7 +25,7 @@ public class ReverseBits {
 
     /**
      * Simple O(1) solution. Bit shift, check for set bit, set bit in result
-     * by exponent of 2.
+     * by adding appropriate exponent of 2.
      */
     public static long reverse(long a) {
         int original = 0, reverse = 31;
