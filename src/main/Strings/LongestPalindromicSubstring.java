@@ -55,7 +55,7 @@ public class LongestPalindromicSubstring {
     /**
      * Better approach improves up to O(n^2) by using dynamic programming to
      * keep track of the previous solutions to smaller substrings, through
-     * the use of a table for quick lookup. 
+     * the use of a table for quick lookup.
      */
     public static String longestPalindrome(String A) {
         int n = A.length();
