@@ -1,6 +1,7 @@
 package LinkedLists;
 
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
@@ -38,6 +39,37 @@ public class ListCycle {
         }
     }
 
+    /**
+     * Floyd cycle detection can also be utilized, in case memory constraints
+     * make it so even saving pointers is disallowed. Same runtime, though.
+     */
+    public static ListNode detectCycleAlt(ListNode a) {
+        if (a==null || a.next==null) return null;
+
+        ListNode slowPtr = a.next, fastPtr = a.next.next;
+
+        while (fastPtr!=null && fastPtr.next!=null) {
+            if (slowPtr==fastPtr)
+                break;
+
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
+        }
+
+        if (slowPtr==fastPtr) {
+            slowPtr = a;
+            while (slowPtr.next!=fastPtr.next) {
+                slowPtr = slowPtr.next;
+                fastPtr = fastPtr.next;
+            }
+
+            return fastPtr.next;
+        }
+        else {
+            return null;
+        }
+    }
+
     public static void main(String[] args) {
         ListNode head1 = new ListNode(1);
         head1.next = new ListNode(2);
@@ -45,5 +77,6 @@ public class ListCycle {
         head1.next.next.next = new ListNode(4);
         head1.next.next.next.next = head1.next.next;
         System.out.println(detectCycle(head1));
+        System.out.println(detectCycleAlt(head1));
     }
 }
