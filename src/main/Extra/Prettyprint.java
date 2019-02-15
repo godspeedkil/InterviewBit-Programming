@@ -52,10 +52,10 @@ public class Prettyprint {
 
         for(int i=0; i<=size/2; i++) {
             for (int j = i; j < size - i; j++) {
-                result.get(i).set(j, currentNum);
-                result.get(size-1-i).set(j, currentNum);
-                result.get(size-1-j).set(i, currentNum);
-                result.get(size-1-j).set(size-1-i, currentNum);
+                result.get(j).set(i, currentNum);           // vertical left line
+                result.get(j).set(size-1-i, currentNum);    // vertical right line
+                result.get(i).set(j, currentNum);           // horizontal top line
+                result.get(size-1-i).set(j, currentNum);    // horizontal bottom line
             }
             currentNum--;
         }
